@@ -51,7 +51,7 @@ module SidekiqStatusAgent
       rescue  Redis::CannotConnectError, Redis::ConnectionError
         raise 'Could not connect to redis'
       rescue Exception => e
-        raise 'Could not connect to redis'
+        raise "Error! #{e.class} #{e.message} #{e.backtrace}"
       end
     end
 
